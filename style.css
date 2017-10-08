@@ -1,0 +1,368 @@
+/*-----------------------------------------------Note importantes----------------------------------------------*/
+/*   1/Les vidéos, une fois finie, affichent des vidéos similaires sur l'écran même après avoir ajouté :?rel=0.
+     2/Sur le lecteur de la vidéo il n'ya pas la petite croix pour fermer la vidéo (résolu)
+     3/La fenêtre,une fois réduite, on voit le carousel se mettr au dessus du header alors que c'est l'invere qui devrait se produire
+     4/Existe-t-il un moyen plus rapide et pratique de rajouter de nouvelles vidéos sans trop manipuler l'interface d'admin?
+     5/ Comment mettre en place les dernières vidéos en ligne?
+    6/min-height:400px par exple: penser a changer cete valeur avec mediaquerie pour les ecrans moins larges*/
+*/
+/*---------------------------------------------------END------------------------------------------------------*/
+
+/*------------------------------------------ POLICE ---------------------------------------------*/
+@import url('https://fonts.googleapis.com/css?family=Courgette');
+@import url('https://fonts.googleapis.com/css?family=Baloo+Tammudu');
+/*------------------------------------------- END ----------------------------------------------*/
+*{
+box-sizing:border-box;
+}
+html,body {
+        margin:0;
+        padding:0;
+        line-height: 1.4;
+ /*overflow:hidden; à cause de lui mon site s'est bloqué pendant des heures et affichait que la moitié du site*/
+}
+html {
+	background-image:linear-gradient(white,#f1f1f1);
+	font-family:helvetica, sans-serif;
+        font-size:62.5%;
+        min-height:100%;
+ }
+body
+{
+        background: linear-gradient(90deg, #FCFEF9 0, #7A6425 80%, #FFFFFF 100%, #FFFFFF 0);/* W3C */
+	color:black;
+        font:1.6rem bold italic;
+	width:85%;
+	margin:10px auto;
+        border:1px solid white;
+	border-radius:20px 20px 0 0;
+        padding:0px;
+        height:100%;
+       /* Margin bottom by footer height */
+        margin-bottom:60px;
+}
+div.wrapper {
+        background:linear-gradient(90deg, #FCFEF9 46%, #7A6425 41%, #FFFFFF 85%, #FFFFFF 43%);/* W3C */
+
+
+}
+header{
+	background: white;
+	text-align:center;
+        color:black;
+        margin-bottom:70px;
+        z-index:999;
+      
+}
+header img {marging-bottom:80px;}
+
+/* ----Réglages des autres pages ------*/
+h1{
+	font-family: 'Courgette', cursive;/*font-family:helvetica;*/
+	font-size:4rem;
+        padding:10px 12px;
+	margin-top: 20px;
+        margin-bottom:20px;
+        background: -webkit-radial-gradient( center, circle, red, blue);
+background:    -moz-radial-gradient( center, circle, white, gray);
+background:     -ms-radial-gradient( center, circle, white, gray);
+background:      -o-radial-gradient( center, circle, white, gray);
+background:         radial-gradient( circle at center, white, gray);
+}
+
+
+}
+nav {
+	 height:100px;
+	 background-color:#9;BE64B;
+	 border-radius: 12px/ 24px;
+	 margin:5px;
+
+	} 
+
+nav ul {
+         
+	list-style: none;
+	margin:0;
+        padding:0;
+        display:inline-block;
+     
+}
+nav ul li {
+       display:inline-block;
+}
+
+nav ul a:last-child { margin-right:0;}  
+nav ul li a {
+        display:block;
+	text-decoration:none;
+	color:white;
+	font-size:2.3rem;
+        background:linear-gradient(to bottom,white,#333,#f1f1f1);
+	font-family: Oswald-Bold;font-family: 'Courgette', cursive;
+        border:3px solid #f3f5f6;
+        padding:17px 10px;
+        border-radius:30px;
+        width:150px;
+        margin-right:10px;
+        margin-bottom:15px;
+        box-shadow: 6px 6px 3px gray;
+        /*text-shadow: 6px -11px 1px white; #898A8C;*/
+}    
+
+nav ul li a:hover{
+	background-color: linear-gradient(to right,white,#f1f1f1,bisque);
+	color:white;
+	font-size:2.5rem;
+        text-decoration:none;
+        outline:none;
+	text-decoration: none;
+        width:190px;
+	transition: all .5s ease; /* apparait en fondu pendant 0.5seconde*/
+}
+nav ul li a:focus {
+  text-decoration:none;
+  color:white;
+  font:800 27px italic;
+  background:radial-gradient(circle at center,white 0, maroon, gray 100%);
+}
+/* ******************Carousel: Début****************************** */
+
+div.container_carousel {
+   
+
+
+}
+
+ div.carousel-inner .item .img-responsive {
+  width:100%;
+  
+}
+ 
+div.carousel-inner .item {
+         margin-top:0;
+         margin-left:0px;
+         widtgh:800px;
+         height:400px;
+         widtjh:100%;
+}
+div.carousel-caption a{
+  color:red;
+  font-family:'Courgette', cursive;
+}
+#myCarousel {
+z-indkex:-1; /*avec cette valeur le carousel est disparu.*/
+padding:0;
+}
+#myCarousel .carousel-caption {
+        left:0;
+	right:0;
+	bottom:0;
+	text-align:left;
+	background:rgba(250,250,250,0.7);
+	text-shadow:none;
+        color:black;
+        padding:15px 10px;
+        font-size:22px;
+        font:800 18px italic;
+        font-family: 'Courgette', cursive;
+}
+
+#myCarousel .list-group {
+	position:absolute;
+	top:0;
+	right:0px;
+        width:30%;
+}
+#myCarousel .list-group-item {
+        font:800 2rem italic;
+
+}
+#myCarousel .list-group-item {
+        color:black;
+        line-height:2;
+        letter-spacing:5px;
+        font:800 2rem italic;
+        font-family: 'Baloo Tammudu', cursive;
+        text-align:center;}
+        .list-group-item:first-child {
+	background-color:#1473e6;
+        font-family: 'Baloo Tammudu', cursive;}
+        .list-group-item:nth-child(2) {
+        background-color:green;
+        font-family: 'Baloo Tammudu', cursive;
+        }
+        .list-group-item:nth-child(3) {
+        background-color:gray;
+        font-family: 'Baloo Tammudu', cursive;
+        }
+        .list-group-item:nth-child(4) {
+        background-color:#8d6e63;
+        font-family: 'Baloo Tammudu', cursive;
+        }
+
+        
+#myCarousel .list-group-item:not(.active) {
+	border-radius:0px;
+	cursor:pointer;
+        text-align:center;
+        font-family: 'Courgette', cursive;
+        background:radial-gradient(circle at center,white 0,white 15%,gray 100%) ;
+}
+
+@media (min-width: 992px) { 
+	#myCarousel {padding-right:33.3333%;}
+	#myCarousel .carousel-controls {display:none;} 	
+}
+@media (max-width: 991px) { 
+	.carousel-caption p,
+	#myCarousel .list-group {display:none;} 
+}
+/*********************Carousel: FIN***************************/
+/*-----------------Réglage section dernières vidéos-----------------------*/
+h2{
+	text-align: center;
+	text-transform: uppercase;
+	color:white;
+	font-family:Adriana;
+	
+}
+div.derniere_video{
+	border-radius:8px;
+	cursor:pointer;
+        box-sizing:border-box;
+        margin:15px;
+}
+
+/* ----------------Réglage  des pages (autre que homepage)---------------*/
+
+div.container h1 {
+        width:50%;
+        margin: 60px auto;
+}
+ div.container div.well {
+border:3px solid white;
+border-radius:15px;
+height:350px; /*penser a changer cete valeur avec mediaquerie pour les ecrans moins larges*/
+background: -webkit-radial-gradient( center, circle, white, blue);
+background:    -moz-radial-gradient( center, circle, white, gray);
+background:     -ms-radial-gradient( center, circle, white, gray);
+background:      -o-radial-gradient( center, circle, white, gray);
+background:         radial-gradient( circle at center, white, gray);
+
+}   
+div.container div.well:hover {
+  border:10px solid white;
+  background:tan;
+}   
+div.well img {
+width:100%;
+border:1px solid transparent;
+border-radius:15px;
+min-height:200px;
+}
+div.well img:hover {
+  border:2px solid tan;
+  }
+div.container .titre_video {
+       background:white;
+       color:blue;
+       display:block;
+       margin-top:10px;
+       padding:10px;
+       font:800 2rem italic;
+       text-align:center;
+       border:5px solid white;
+       border-radius:12px;
+       font-family: 'Courgette', cursive;
+       overflow: hidden;
+      text-overflow: ellipsis;
+}
+.overflow-ellipsis {
+     
+}
+div.img-icone {
+ position:relative;
+}
+.material-icons {
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%, -50%);
+    color:red;
+    font-weight:800;
+   /* font-size:55px; : ne fonctionne que sur le inline css. sais pas pk?*/
+    text-shadow:6px 8px 5px white;
+}
+.material-icons:hover {
+    font-size:130px; /*ne marche pas. tout come le font-size appliqué sur la classe .material-icons. */
+}
+/* -------------------- footer -------------------- */
+.cuadro_intro_hover{
+                padding: 0px;
+		position: relative;
+		overflow: hidden;
+		height: 200px;
+	}
+	.cuadro_intro_hover:hover .caption{
+		opacity: 1;
+		transform: translateY(-150px);
+		-webkit-transform:translateY(-150px);
+		-moz-transform:translateY(-150px);
+		-ms-transform:translateY(-150px);
+		-o-transform:translateY(-150px);
+	}
+	.cuadro_intro_hover img{
+		z-index: 4;
+	}
+	.cuadro_intro_hover .caption{
+		position: absolute;
+		top:150px;
+		-webkit-transition:all 0.3s ease-in-out;
+		-moz-transition:all 0.3s ease-in-out;
+		-o-transition:all 0.3s ease-in-out;
+		-ms-transition:all 0.3s ease-in-out;
+		transition:all 0.3s ease-in-out;
+		width: 100%;
+	}
+	.cuadro_intro_hover .blur{
+		background-color: rgba(0,0,0,0.7);
+		height: 300px;
+		z-index: 5;
+		position: absolute;
+		width: 100%;
+	}
+	.cuadro_intro_hover .caption-text{
+		z-index: 10;
+		color: #fff;
+		position: absolute;
+		height: 300px;
+		text-align: center;
+		top:-20px;
+		width: 100%;
+	}
+/* ------------- Footer -----------------------*/
+        .footertext + h2 {
+      color:white;
+      text-align:left;
+}       h3 {
+            color:white;
+            font: bold 2.5rem italic;
+     }
+        h3 + p {
+            font: bold 2rem italic;
+            color: inherit;
+}
+        h3 a {
+            color:inherit;
+            font-size:2rem;
+}
+        .img-circle {
+            width:30%;
+}
+       .copyright {
+             font:bold 2rem italic;
+             text-align:center;
+             padding:12px 15px;
+             color:red;
+   }
