@@ -6,6 +6,14 @@
 	<!--Pour assurer un rendu approprié et un zoom tactile, ajoutez la méta- image de la fenêtre à votre écran 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"> désactiver les capacités de zoom sur les appareils mobiles en ajoutant user-scalable=noà la méta- étiquette de la fenêtre. Cela désactive le zoom, ce qui signifie que les utilisateurs ne peuvent faire que défiler-->
         <link rel="stylesheet" type="text/css" href="bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="style.css"><!--position importante pour que le fichier css prends l'avantage meme si<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!--Pour assurer un rendu approprié et un zoom tactile, ajoutez la méta- image de la fenêtre à votre écran 
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"> désactiver les capacités de zoom sur les appareils mobiles en ajoutant user-scalable=noà la méta- étiquette de la fenêtre. Cela désactive le zoom, ce qui signifie que les utilisateurs ne peuvent faire que défiler-->
+        <link rel="stylesheet" type="text/css" href="bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="style.css"><!--position importante pour que le fichier css prends l'avantage meme si c pas a 100% sur bootsrtrap-->
 	<!--Le link boostrap après la link css change l'apparence de la page notamment les marges, police, couleur etc): -->
         <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
@@ -56,11 +64,34 @@ section h2 {
   color:red;
   font-weight:bold;
 }
+/*Class pour notre javascript*/
+
+
+.degrade2{
+    background:linear-gradient(to bottom,blue,white,green);
+}
+.degrade3{
+    background:linear-gradient(to right,tan,white,black);
+}
+.degrade4{
+    background:radial-gradient(circle at center,blue,white,tan);
+}
+
+/*END class */
 </style>
 </head>
 <body id="body">
 <div id ="wrapper" class="wrapper">
-    <header>
+    <header> 
+    <div class="buttons">
+  <h3>Color switch</h3>
+  <button data-color="red">Switch to red</button>
+  <button data-color="blue">Switch to blue</button>
+  <button data-color="green">Switch to green</button>
+  <button data-color="orange">Switch to orange</button>
+  <button data-color="black">Switch to black</button>
+  <button data-color="grey">Switch to white</button>
+</div>
 	<div class="container-fluid"><!---fluid: prend toute la marge possible et container est plus courte-->
   <div class="jumbotron">
 <h1><img src="logo/logo_arbres.jpg" align="left" style="width:15%; border:1px solid green; border-radius:50%;">La vie pratique</h1>
@@ -199,24 +230,20 @@ section h2 {
 	</section> <br> <br>
 <hr/>
  <footer><?php include'footer.php';?></footer>
+       <script src="app.js"></script>
        <script src="jquery-3.2.1.min.js"></script>
-       <script>
+       
 <!--$(document).ready(function(){
     $("h1+p").css("background-color", "black");
     $("li:nth-child(even).css("background-color", "pink");  
-});
-</script>
+});-->
+       
        <script src="bootstrap.min.js"></script>
-       <script src="carousel.js">
-</script>-->
-<script>
-var body = document.getElementById('body');
-var choixColor=body.style.backgroundColor= prompt("Pour une image de fond de ton choix , veuillez saisir une couleur (en anglais)");
-console.log(body.choixColor);
-}
-</script>
+       <script src="carousel.js"></script>
+
+
 
 <!-- Respectez l'ordre des scripts. C'est important -->
 
 </body>
-</html>
+</html> 

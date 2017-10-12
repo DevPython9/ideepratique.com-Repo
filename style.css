@@ -12,8 +12,10 @@
 @import url('https://fonts.googleapis.com/css?family=Courgette');
 @import url('https://fonts.googleapis.com/css?family=Baloo+Tammudu');
 /*------------------------------------------- END ----------------------------------------------*/
-*{
-box-sizing:border-box;
+html{ 
+-webkit-box-sizing:border-box; /*pour ie6/7*/
+        box-sizing:border-box;  /*si je laisse l'etoile a la place de html ca me met le warning: * is know to be slow*/
+    
 }
 html,body {
         margin:0;
@@ -22,14 +24,14 @@ html,body {
  /*overflow:hidden; à cause de lui mon site s'est bloqué pendant des heures et affichait que la moitié du site*/
 }
 html {
-	background-image:linear-gradient(white,#f1f1f1);
+	/*background-image:linear-gradient(white,#f1f1f1);*/
 	font-family:helvetica, sans-serif;
         font-size:62.5%;
         min-height:100%;
  }
 body
 {
-        background: linear-gradient(90deg, #FCFEF9 0, #7A6425 80%, #FFFFFF 100%, #FFFFFF 0);/* W3C */
+    /*background: linear-gradient(90deg, #FCFEF9 0, #7A6425 80%, #FFFFFF 100%, #FFFFFF 0);/* W3C */
 	color:black;
         font:1.6rem bold italic;
 	width:85%;
@@ -41,6 +43,33 @@ body
        /* Margin bottom by footer height */
         margin-bottom:60px;
 }
+/*Changement de background*/
+.buttons{
+  margin:20px 0;
+}
+
+.buttons button{
+  border: none;
+  color: #fff;
+  padding: 0;
+  cursor: pointer;
+  width: 2rem;
+  height: 2rem;
+  overflow: hidden;
+  border-radius: 50%;
+  border: 4px solid #fff;
+  font-size: 0;
+  vertical-align: top;
+}
+.buttons button[data-color="red"]{background: #c53b3b;}
+.buttons button[data-color="blue"]{background: #285496;}
+.buttons button[data-color="green"]{background: #2e7532;}
+.buttons button[data-color="orange"]{background: #973900;}
+.buttons button[data-color="black"]{background: #1c1c1c;}
+.buttons button[data-color="grey"]{background: #e6e6e6;}
+/*-----------END-----*/
+
+
 div.wrapper {
         background:linear-gradient(90deg, #FCFEF9 46%, #7A6425 41%, #FFFFFF 85%, #FFFFFF 43%);/* W3C */
 
