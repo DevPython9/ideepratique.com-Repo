@@ -18,24 +18,17 @@
 	<!--Le link boostrap après la link css change l'apparence de la page notamment les marges, police, couleur etc): -->
         <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
         <!-- ...................favicon....................... -->
-<link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
-<link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png">
-<link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.png">
-<link rel="apple-touch-icon" sizes="76x76" href="/apple-icon-76x76.png">
-<link rel="apple-touch-icon" sizes="114x114" href="/apple-icon-114x114.png">
-<link rel="apple-touch-icon" sizes="120x120" href="/apple-icon-120x120.png">
-<link rel="apple-touch-icon" sizes="144x144" href="/apple-icon-144x144.png">
-<link rel="apple-touch-icon" sizes="152x152" href="/apple-icon-152x152.png">
-<link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png">
-<link rel="icon" type="image/png" sizes="192x192"  href="/android-icon-192x192.png">
-<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
-<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-<link rel="manifest" href="/manifest.json">
-<meta name="msapplication-TileColor" content="#ffffff">
-<meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
-<meta name="theme-color" content="#ffffff">
-     <!-- ....................END   ....................... -->
+     <?php include'favicon.php';?>
+     <!-- .................... END   ....................... -->
+     <!-- ---------------------Icone ---------------------r- -->
+     <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+      <!-- -------------------END --------------------------- -->
+         
+     </-->
+     <!----------------------Police------------------------- -->
+     <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
+     <!---------------------END -------------------------------->
     
     <title>La vie pratique</title>
 <style>
@@ -94,13 +87,13 @@ section h2 {
 </div>
 	<div class="container-fluid"><!---fluid: prend toute la marge possible et container est plus courte-->
   <div class="jumbotron">
-<h1><img src="logo/logo_arbres.jpg" align="left" style="width:15%; border:1px solid green; border-radius:50%;">La vie pratique</h1>
+<h1 align="left" style="font-family:'Lobster', cursive; min-height:170px; color:#c3e88d"font-size:3.2rem;"><img src="logo/logo_arbres.jpg" align="left" style="width:10%; height:10%; border:1px solid green; border-radius:50%;">Idée<span style="color:#d57669; vertical-align:middle;">Pratique<strong>...</strong></span></h1>
 	<nav class="navbar "> <!-- class="navbar navbar-default" effacerait mon background vert-->
 		<div class="container">
         <ul class="navbar">
               <li class="active">
-                   <a href="index.php">
-                  <i class="material-icons icone_avion">home</i><br/>Acceuil </a></li>
+                  <a href="index.php"><i class="material-icons">home</i><br/>
+                  Accueil </a></li>
                  <li class="dropdown">
                   <a href="remede.php">Remède </a>
     		  </li>
