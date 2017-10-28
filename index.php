@@ -29,7 +29,9 @@
      <!----------------------Police------------------------- -->
      <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
      <!---------------------END -------------------------------->
-    
+    <!-- --------------------Scroll----------------------------->
+    <?php include'backTop1.php'?>
+    <link  rel="stylesheet" href="YouTubePopUp.css" />
     <title>La vie pratique</title>
 <style>
 .container {margin-bottom:0px;}
@@ -180,7 +182,7 @@ section h2 {
 		<h2>Les Dernières Vidéos ajoutées ...</h2>
    <!--    <div class="container">  
              <div class="item item-1">
-               <iframe class="last-video" src="https://www.youtube-nocookie.com/embed/DoP-w7cmMq0?rel=0" frameborder="0" allowfullscreen></iframe>
+               <a class="demo" href="https://www.youtube.com/watch?v=DoP-w7cmMq0?rel=0"><img src="img_thumbnail_index.jpg"/></a>
             <div class="titre-last-video"><p>Electroménager:réparation</p></div>
             </div>
              <div class="item item-2">
@@ -202,19 +204,19 @@ section h2 {
 <div class="flex-video">
                  <div class="row">
                    <div class="col-md-4 well derniere_video">
-                     <iframe class="last-video" src="https://www.youtube-nocookie.com/embed/DoP-w7cmMq0?rel=0" frameborder="0" allowfullscreen></iframe>
+                     <a class="demo" href="https://www.youtube.com/watch?v=DoP-w7cmMq0?rel=0"><img src="img_thumb_index1.jpg"/></a>
                    <div class="titre-last-video"><p>Electroménager:réparation</p></div>
 		   </div>
                    <div class="col-md-4 well derniere_video">
-                     <iframe class="last-video"  src="https://www.youtube-nocookie.com/embed/CJ1wlBQg0Yw?rel=0" frameborder="0" allowfullscreen></iframe>
+                      <a class="demo" href="https://www.youtube.com/watch?v=CJ1wlBQg0Yw?rel=0"><img src="img_thumb_index2.jpg"/></a>
 		  <div class="titre-last-video"><p>Réparer un disque dur</p></div>
  </div>           <div class="col-md-4 well derniere_video">
-                     <iframe class="last-video"  src="https://www.youtube-nocookie.com/embed/Gji8J5A1iBU?rel=0" frameborder="0" allowfullscreen></iframe>
+                     <a class="demo" href="https://www.youtube.com/watch?v=Gji8J5A1iBU?rel=0"><img src="img_thumb_index3.jpg"/></a>
 		   <div class="titre-last-video"><p>Faire un climatiseur maison</p></div>
                 </div>
                   <div class="row">
                      <div class="col-md-4 well derniere_video">
-                     <iframe class="last-video"  src="https://www.youtube-nocookie.com/embed/a4JUa4sKzdE?rel=0" frameborder="0" allowfullscreen></iframe>
+                     <a class="demo" href="https://www.youtube.com/watch?v=a4JUa4sKzdE?rel=0"><img src="img_thumb_index4.jpg"/></a>
 		   <div class="titre-last-video"><p>5 Secrets sur le smartphone</p></div>
                     </div>
                  </div>
@@ -233,9 +235,38 @@ section h2 {
        
        <script src="bootstrap.min.js"></script>
        <script src="carousel.js"></script>
+       <script src="jquery-3.2.1.min.js"></script>
+       <script>            
+jQuery(document).ready(function() {
+  var duration = 500;
+  jQuery(window).scroll(function() {
+    if (jQuery(this).scrollTop() > 100) {
+      // Si un défillement de 100 pixels ou plus.
+      // Ajoute le bouton
+      jQuery(".cRetour").fadeIn(duration);
+    } else {
+      // Sinon enlève le bouton
+      jQuery(".cRetour").fadeOut(duration);
+    }
+  });
+				
+  jQuery(".cRetour").click(function(event) {
+    // Un clic provoque le retour en haut animé.
+    event.preventDefault();
+    jQuery("html, body").animate({scrollTop: 0}, duration);
+    return false;
+  })
+});
+</script>
 
-
-
+<div class="cRetour"></div>
+</script><script src="YouTubePopUp.jquery.js"></script>
+<script>
+jQuery("a.demo").YouTubePopUp();
+</script>
+<script>
+jQuery("a.demo").YouTubePopUp({ autoplay: 0 });
+</script>
 <!-- Respectez l'ordre des scripts. C'est important -->
 
 </body>
